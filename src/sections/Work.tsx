@@ -107,11 +107,32 @@ function Piece({ project, index }: { project: Project; index: number }) {
 function MoreRow({ item }: { item: MoreItem }) {
   return (
     <motion.li variants={rise(12)} className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between md:gap-6">
-      <div className="min-w-0 md:flex-1 lg:flex lg:items-baseline lg:gap-3">
-        <span className="block shrink-0 text-[1rem] font-semibold leading-[1.45] text-ink">{item.title}</span>
-        <span title={item.fact} className="mt-0.5 block min-w-0 text-[0.9375rem] leading-[1.45] text-muted lg:mt-0 lg:line-clamp-1">
-          {item.fact}
-        </span>
+      <div className="min-w-0 md:flex-1">
+        <div className="lg:flex lg:items-baseline lg:gap-3">
+          <span className="block shrink-0 text-[1rem] font-semibold leading-[1.45] text-ink">{item.title}</span>
+          <span title={item.fact} className="mt-0.5 block min-w-0 text-[0.9375rem] leading-[1.45] text-muted lg:mt-0 lg:line-clamp-1">
+            {item.fact}
+          </span>
+        </div>
+        {item.with && item.with.length > 0 && (
+          <p className="mt-1 text-[0.8125rem] leading-[1.45] text-muted">
+            with{" "}
+            {item.with.map((person, i) => (
+              <span key={person.href}>
+                {i > 0 && ", "}
+                <a
+                  href={person.href}
+                  target="_blank"
+                  rel="noopener"
+                  className="text-accent underline-offset-4 hover:underline"
+                >
+                  {person.name}
+                  <NewTab />
+                </a>
+              </span>
+            ))}
+          </p>
+        )}
       </div>
       {item.link ? (
         <a

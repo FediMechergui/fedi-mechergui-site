@@ -128,11 +128,18 @@ export const featured: Project[] = [
   },
 ];
 
+export type Collaborator = { name: string; href: string };
+
 export type MoreItem = {
   title: string;
   fact: string;
   link: { label: "GitHub" | "Live" | "APK"; href: string } | null;
+  /** People credited on the project, shown as "with ..." under the fact. */
+  with?: Collaborator[];
 };
+
+export const RAGHED: Collaborator = { name: "Raghed Saidani", href: "https://github.com/raghe-d78" };
+export const ADEM: Collaborator = { name: "Adem Chammakhi", href: "https://github.com/AdemChammakhi" };
 
 export const moreWork: { group: string; items: MoreItem[] }[] = [
   {
@@ -140,7 +147,7 @@ export const moreWork: { group: string; items: MoreItem[] }[] = [
     items: [
       { title: "Medtour ERP", fact: "Full ERP and admin dashboard for Medtour.", link: null },
       { title: "Medtour DAM", fact: "Digital asset management platform for Medtour.", link: null },
-      { title: "Medtour Unified Inbox", fact: "One inbox for Medtour's customer conversations.", link: null },
+      { title: "Medtour Unified Inbox", fact: "One inbox for Medtour's customer conversations.", link: { label: "GitHub", href: "https://github.com/AdemChammakhi/Unified-Inbox" }, with: [ADEM] },
       { title: "THEA", fact: "Financial platform, 11 microservices, AI OCR, RAG chatbot.", link: { label: "GitHub", href: "https://github.com/FediMechergui/THEA" } },
       { title: "Medianet Opportunities", fact: "Opportunities platform with Excel export.", link: null },
       { title: "SkillVault", fact: "Skills assessment platform, Angular 17, 5 services.", link: { label: "GitHub", href: "https://github.com/FediMechergui/SkillVault" } },
@@ -153,8 +160,8 @@ export const moreWork: { group: string; items: MoreItem[] }[] = [
     items: [
       { title: "BeyGO", fact: "AR mobile app exploring the 27 Beys of Tunisia.", link: { label: "GitHub", href: "https://github.com/FediMechergui/BeyGO" } },
       { title: "Qutrob", fact: "Arabic roots game built on the Lisan al-Arab inventory.", link: { label: "GitHub", href: "https://github.com/FediMechergui/Qutrob" } },
-      { title: "Quantum Banking System", fact: "Quantum-classical banking: QRNG, BB84, fraud detection. With Raghed Saidani.", link: { label: "GitHub", href: "https://github.com/FediMechergui/quantum_bank" } },
-      { title: "Immobilier RAG", fact: "RAG for French real-estate documents in FR, EN and AR.", link: { label: "GitHub", href: "https://github.com/FediMechergui/rag-immobilier" } },
+      { title: "Quantum Banking System", fact: "Quantum-classical banking: QRNG, BB84, fraud detection.", link: { label: "GitHub", href: "https://github.com/FediMechergui/quantum_bank" }, with: [RAGHED] },
+      { title: "Immobilier RAG", fact: "Cognitive graph RAG for French real-estate documents.", link: { label: "GitHub", href: "https://github.com/FediMechergui/rag-immobilier" }, with: [RAGHED] },
       { title: "Doctor appointment system", fact: "Patient and appointment platform. Graduation project.", link: { label: "GitHub", href: "https://github.com/FediMechergui/doctor-appointment-system" } },
     ],
   },
