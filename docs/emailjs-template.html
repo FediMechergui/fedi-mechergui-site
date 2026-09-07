@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>New {{need}} request from {{from_name}}</title>
+  </head>
+  <body style="margin:0;padding:0;background:#F3F5F4;font-family:Arial,Helvetica,sans-serif;color:#101D33;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F3F5F4;padding:24px 12px;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#FBFCFB;border-radius:6px;overflow:hidden;">
+            <tr>
+              <td style="background:#1E4EA1;padding:20px 28px;">
+                <p style="margin:0;font-family:Consolas,Menlo,monospace;font-size:12px;line-height:18px;color:#D3DCE7;">fedimechergui.site</p>
+                <h1 style="margin:6px 0 0;font-size:22px;line-height:28px;font-weight:700;color:#F3F5F4;">New {{need}} request</h1>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:24px 28px 8px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-size:15px;line-height:22px;">
+                  <tr>
+                    <td width="140" style="padding:8px 0;border-bottom:1px solid #D3DAD7;color:#4A5A6E;font-size:13px;vertical-align:top;">Request</td>
+                    <td style="padding:8px 0;border-bottom:1px solid #D3DAD7;font-weight:700;">{{need}}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px 0;border-bottom:1px solid #D3DAD7;color:#4A5A6E;font-size:13px;vertical-align:top;">From</td>
+                    <td style="padding:8px 0;border-bottom:1px solid #D3DAD7;">{{from_name}}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px 0;border-bottom:1px solid #D3DAD7;color:#4A5A6E;font-size:13px;vertical-align:top;">Email</td>
+                    <td style="padding:8px 0;border-bottom:1px solid #D3DAD7;"><a href="mailto:{{reply_to}}" style="color:#1E4EA1;text-decoration:none;">{{reply_to}}</a></td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px 0;border-bottom:1px solid #D3DAD7;color:#4A5A6E;font-size:13px;vertical-align:top;">WhatsApp or phone</td>
+                    <td style="padding:8px 0;border-bottom:1px solid #D3DAD7;">{{phone}}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px 0;border-bottom:1px solid #D3DAD7;color:#4A5A6E;font-size:13px;vertical-align:top;">Detail</td>
+                    <td style="padding:8px 0;border-bottom:1px solid #D3DAD7;">{{detail}}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px 0;color:#4A5A6E;font-size:13px;vertical-align:top;">Sent</td>
+                    <td style="padding:8px 0;">{{submitted_at}}</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:8px 28px 24px;">
+                <p style="margin:0 0 8px;color:#4A5A6E;font-size:13px;line-height:18px;">Message</p>
+                <div style="background:#DCE7F0;border-radius:6px;padding:16px 18px;font-size:15px;line-height:23px;white-space:pre-wrap;">{{message}}</div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:16px 28px 24px;">
+                <table role="presentation" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="background:#1E4EA1;border-radius:999px;">
+                      <a href="mailto:{{reply_to}}?subject=Re: your {{need}} request" style="display:inline-block;padding:11px 20px;color:#F3F5F4;font-size:14px;font-weight:700;text-decoration:none;">Reply to {{from_name}}</a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:0 28px 24px;">
+                <p style="margin:0;font-family:Consolas,Menlo,monospace;font-size:12px;line-height:18px;color:#4A5A6E;">Sent from the contact form at {{page_url}}</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

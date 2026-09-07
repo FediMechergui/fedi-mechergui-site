@@ -1,0 +1,52 @@
+/* Design tokens: chalk whitewash and Sidi Bou Said blue under noon light */
+:root {
+  color-scheme: light dark;
+
+  --bg:          #F3F5F4;   /* Chalk: page background */
+  --surface:     #FBFCFB;   /* Whitewash: plates, tiles, stack panel, mobile nav sheet */
+  --surface-2:   #DCE7F0;   /* Sea Haze: tinted cell, secondary button fill, row hover, chips */
+  --text:        #101D33;   /* Ink: primary text, wordmark */
+  --text-muted:  #4A5A6E;   /* Slate: secondary text, captions, mono data */
+  --accent:      #1E4EA1;   /* Sidi Bou Blue: the single accent */
+  --accent-ink:  #F3F5F4;   /* Chalk text on accent fills */
+  --band:        #1E4EA1;   /* Tutoring band fill */
+  --band-ink:    #F3F5F4;   /* Text on the band */
+  --band-ink-2:  #D3DCE7;   /* Secondary text on the band */
+  --border:      #D3DAD7;   /* Hairline */
+  --shadow:      rgb(30 78 161 / 0.22);   /* The noon shadow */
+  --focus:       #1E4EA1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:          #0B1426;   /* Gulf Night */
+    --surface:     #131F36;   /* Deep Water */
+    --surface-2:   #1A2A47;   /* Night Haze */
+    --text:        #E9EEF3;   /* Foam */
+    --text-muted:  #A3B0C2;   /* Mist */
+    --accent:      #7CB0F2;   /* Sky Blue */
+    --accent-ink:  #0B1426;
+    --band:        #1E4EA1;
+    --band-ink:    #E9EEF3;
+    --band-ink-2:  #C9D3E1;
+    --border:      #24324B;
+    --shadow:      rgb(124 176 242 / 0.18);
+    --focus:       #7CB0F2;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg:          #0B1426;
+  --surface:     #131F36;
+  --surface-2:   #1A2A47;
+  --text:        #E9EEF3;
+  --text-muted:  #A3B0C2;
+  --accent:      #7CB0F2;
+  --accent-ink:  #0B1426;
+  --band:        #1E4EA1;
+  --band-ink:    #E9EEF3;
+  --band-ink-2:  #C9D3E1;
+  --border:      #24324B;
+  --shadow:      rgb(124 176 242 / 0.18);
+  --focus:       #7CB0F2;
+}

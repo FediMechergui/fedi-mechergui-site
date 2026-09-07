@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@import "@fontsource-variable/archivo/wdth.css";
+@import "@fontsource-variable/jetbrains-mono";
+@import "./tokens.css";
+
+/* Metric-matched fallback so the swap to Archivo does not reflow the headline */
+@font-face {
+  font-family: "Archivo Fallback";
+  src: local("Arial"), local("Helvetica"), local("Liberation Sans");
+  size-adjust: 106%;
+  ascent-override: 88%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
+@theme inline {
+  --color-page:        var(--bg);
+  --color-surface:     var(--surface);
+  --color-surface-2:   var(--surface-2);
+  --color-ink:         var(--text);
+  --color-muted:       var(--text-muted);
+  --color-accent:      var(--accent);
+  --color-accent-ink:  var(--accent-ink);
+  --color-band:        var(--band);
+  --color-band-ink:    var(--band-ink);
+  --color-band-ink-2:  var(--band-ink-2);
+  --color-line:        var(--border);
+
+  --font-sans:    "Archivo Variable", "Archivo", "Archivo Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Archivo Variable", "Archivo", "Archivo Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-body:    "Archivo Variable", "Archivo", "Archivo Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --radius-plate: 6px;
+  --radius-pill:  999px;
+}
+
+/* Width-axis utilities: Tailwind cannot express font-variation-settings */
+@utility wdth-118 {
+  font-variation-settings: "wdth" 118;
+}
+@utility wdth-112 {
+  font-variation-settings: "wdth" 112;
+}
+@utility wdth-100 {
+  font-variation-settings: "wdth" 100;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-variation-settings: "wdth" 100;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-plate);
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+  /* Screenshot mode (?static): the hero keeps its natural height in tall capture viewports */
+  :root[data-static] #top {
+    min-height: 0 !important;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+  }
+}
