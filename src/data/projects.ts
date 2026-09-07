@@ -144,7 +144,7 @@ export const moreWork: { group: string; items: MoreItem[] }[] = [
       { title: "THEA", fact: "Financial platform, 11 microservices, AI OCR, RAG chatbot.", link: { label: "GitHub", href: "https://github.com/FediMechergui/THEA" } },
       { title: "Medianet Opportunities", fact: "Opportunities platform with Excel export.", link: null },
       { title: "SkillVault", fact: "Skills assessment platform, Angular 17, 5 services.", link: { label: "GitHub", href: "https://github.com/FediMechergui/SkillVault" } },
-      { title: "Fondation Bien-etre", fact: "Wellness centre website with a contact form.", link: { label: "GitHub", href: "https://github.com/FediMechergui/fondation-bien-etre" } },
+      { title: "Fondation Bien-etre", fact: "Wellness centre website with a contact form.", link: { label: "Live", href: "https://fondation-bien-etre-theta.vercel.app" } },
       { title: "Hotel contract workflow", fact: "16-step hotel contract form for a travel agency.", link: { label: "Live", href: "https://hoteldemo-five.vercel.app" } },
     ],
   },
