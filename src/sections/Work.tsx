@@ -1,3 +1,5 @@
+import { RecentProjects } from "../components/RecentProjects";
+import { PublicProjects } from "../components/PublicProjects";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { useReduce } from "../motion/useReduce";
 import { ArrowUpRight } from "@phosphor-icons/react";
@@ -85,7 +87,7 @@ function Piece({ project, index }: { project: Project; index: number }) {
             onBlur={arrow.off}
             className="inline-flex shrink-0 items-center gap-1 whitespace-nowrap text-[0.875rem] font-medium leading-[1.45] text-accent underline-offset-4 hover:underline"
           >
-            Visit site
+            {project.url.startsWith("https://github.com/") ? "View source" : "Visit site"}
             <span className="sr-only">: {project.title}</span>
             <NewTab />
             <motion.span aria-hidden className="inline-flex" style={arrow.style}>
@@ -173,7 +175,7 @@ function RepoLink() {
   return (
     <p className="mt-12">
       <a
-        href={GITHUB_URL}
+        href={`${GITHUB_URL}?tab=repositories`}
         target="_blank"
         rel="noopener"
         onPointerEnter={arrow.on}
@@ -204,6 +206,9 @@ export function Work() {
           <SectionHeading id="work-title">Selected work.</SectionHeading>
         </motion.div>
 
+        <RecentProjects />
+
+        <h3 className="mt-16 font-display wdth-112 text-xl font-semibold text-ink">A closer look</h3>
         {/* Offset two-column gallery. On phones the column wrappers dissolve (display: contents) and the order classes interleave the pieces. */}
         <div className="mt-12 flex flex-col gap-12 lg:grid lg:grid-cols-12 lg:gap-x-6 lg:gap-y-16">
           <div className="contents lg:col-span-7 lg:flex lg:flex-col lg:gap-16">
@@ -225,6 +230,7 @@ export function Work() {
               <MoreGroup key={group.group} group={group.group} items={group.items} />
             ))}
           </div>
+          <PublicProjects />
           <RepoLink />
         </div>
       </div>
