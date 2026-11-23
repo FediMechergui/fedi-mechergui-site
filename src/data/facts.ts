@@ -1,3 +1,5 @@
+import { publicProjects } from "./publicProjects";
+
 export const AVAILABILITY = "Open for projects and online tutoring";
 
 export const EMAIL = "fedimechergui03@gmail.com";
@@ -7,7 +9,7 @@ export const LINKEDIN_HANDLE = "fedi-mechergui-579054255";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/fedi-mechergui-579054255";
 export const GITHUB_HANDLE = "FediMechergui";
 export const GITHUB_URL = "https://github.com/FediMechergui";
-export const TERMINAL_URL = "https://fedi-shell-folio.vercel.app";
+export const TERMINAL_URL = "https://fedi-shellfolio.netlify.app";
 
 export const MAILTO_PROJECT = "mailto:" + EMAIL + "?subject=" + encodeURIComponent("Start a project");
 export const MAILTO_TUTORING = "mailto:" + EMAIL + "?subject=" + encodeURIComponent("Book a tutoring session");
@@ -29,7 +31,7 @@ export const SOCIALS = [
 export const HERO = {
   headlineA: "Software your business runs on.",
   headlineB: "Built in Tunis.",
-  subtext: "Web apps, ERPs, mobile apps, DevSecOps and AI for Tunisian companies and remote clients, in Arabic, English or French.",
+  subtext: "Custom business software, web platforms and mobile apps for Tunisian companies and remote clients. From rental workflows and APIs to offline apps and AI integrations, in Arabic, English or French.",
   primary: "Start a project",
   secondary: "Book a tutoring session",
 } as const;
@@ -63,7 +65,7 @@ export type HoursRow = { label: string; bars: HoursBar[] };
 
 export const ABOUT = {
   heading: "Networks first, then software.",
-  p1: "I am a software engineer and networks expert in La Marsa, Tunis. I came to web through networks and security, with a Master in Networking Expertise and Cyber Security and a Cisco CCNA, so every app I ship comes with a pipeline, security scans and a monitoring dashboard, not just a front end.",
+  p1: "I am a software engineer and networks expert in La Marsa, Tunis. I came to web through networks and security, with a Master in Networking Expertise and Cyber Security and Cisco CCNA 1 training. That background informs my work on APIs, deployment pipelines, network simulation and practical security.",
   p2: "Before that, a License in Embedded Systems and IoT at ISSAT Mateur, which is why Arduino, ESP32 and Raspberry Pi work sits alongside web and mobile. I work with Tunisian businesses on site and with international clients remotely, in Arabic, English and French.",
   groups: [
     { label: "Now", lines: ["Head of Web Development Department, Medtour, since 11/2025.", "Built the Medtour ERP and admin dashboard, 12/2025 to 03/2026."], mono: false },
@@ -71,7 +73,7 @@ export const ABOUT = {
     { label: "Education", lines: ["Master in Networking Expertise and Cyber Security, ISI Mahdia, 2023 to 2025.", "License in Embedded Systems and IoT, ISSAT Mateur, 2020 to 2023."], mono: false },
     { label: "Certificates", lines: ["Cisco CCNA 1", "EF SET English C2", "TryHackMe Advent of Cyber", "System Design and Architectures Level 2"], mono: false },
     { label: "Languages", lines: ["Arabic, native", "English, C2", "French, B1", "German, A1"], mono: false },
-    { label: "Code", lines: ["37 public repositories", "28+ projects built"], mono: true },
+    { label: "Code", lines: [`${publicProjects.length} public repositories`, "Web, mobile, business software and network simulation"], mono: true },
   ],
   hours: {
     title: "Working hours from Tunis",

@@ -1,3 +1,5 @@
+import { publicProjects } from "./publicProjects";
+
 export type Project = {
   slug: string;
   title: string;
@@ -19,7 +21,7 @@ export const featured: Project[] = [
     title: "GeoVista",
     description: "3D geomatics platform: terrain, buildings, geology and bathymetry layers, with a 2D map and a 3D viewer.",
     stack: ["Next.js 16", "Three.js", "CesiumJS", "MapLibre GL"],
-    url: "https://geovista-eta.vercel.app",
+    url: "https://geovista-fm.netlify.app",
     image: "/work/geovista.webp",
     imageSmall: "/work/geovista-sm.webp",
     width: 1440,
@@ -31,9 +33,9 @@ export const featured: Project[] = [
   {
     slug: "iron",
     title: "IRON",
-    description: "Tunisian supplements storefront in FR, AR and EN with RTL, TND pricing and D17, Flouci, Konnect payments.",
+    description: "Frontend storefront prototype in French, Arabic and English, with RTL, TND pricing and a demo admin back office.",
     stack: ["React 18", "Vite", "Tailwind", "Zustand"],
-    url: "https://iron-ruddy.vercel.app",
+    url: "https://iron-fm.netlify.app",
     image: "/work/iron.webp",
     imageSmall: "/work/iron-sm.webp",
     width: 1000,
@@ -59,7 +61,7 @@ export const featured: Project[] = [
   {
     slug: "fitcoach",
     title: "FitCoach",
-    description: "Offline-first Android fitness, nutrition and health app: 550-exercise library, streaks, body composition and PDF reports for a coach. No account, no internet.",
+    description: "Offline-first Android fitness app for Tunisian users: workout tracking, local nutrition records and progress reports, built with React Native and SQLite.",
     stack: ["React Native", "Expo", "TypeScript", "SQLite"],
     url: "https://github.com/FediMechergui/FitCoach",
     image: "/work/fitcoach.webp",
@@ -73,9 +75,9 @@ export const featured: Project[] = [
   {
     slug: "payrollhub",
     title: "PayrollHub",
-    description: "Payroll and HR platform for Tunisian enterprises, CNSS and IRPP compliant for 2025-2026, with payslip generation.",
+    description: "Payroll and HR application for Tunisian enterprises, with employee records, payroll workflows and an Express / MongoDB backend.",
     stack: ["React", "Node", "Express", "MongoDB"],
-    url: "https://tunisian-payroll-landing.vercel.app",
+    url: "https://tunisian-payroll-landing.netlify.app",
     image: "/work/payrollhub.webp",
     imageSmall: "/work/payrollhub-sm.webp",
     width: 1440,
@@ -101,9 +103,9 @@ export const featured: Project[] = [
   {
     slug: "omnilink",
     title: "Omnilink",
-    description: "Startup website plus the backend behind it: JS and Python microservices, Redis caching, MySQL with Firebase.",
-    stack: ["Node", "Python", "Redis", "MySQL"],
-    url: "https://omnilink-website-try.vercel.app",
+    description: "Public website for Omnilink, presenting the startup and its services.",
+    stack: ["React", "Vite", "Bootstrap", "Firebase"],
+    url: "https://omnilink-website.netlify.app",
     image: "/work/omnilink.webp",
     imageSmall: "/work/omnilink-sm.webp",
     width: 1440,
@@ -115,9 +117,9 @@ export const featured: Project[] = [
   {
     slug: "petshop",
     title: "Dahdiha Petshop ERP",
-    description: "ERP for a Tunisian pet shop: stock and warehouses, purchases, sales, traceability and accounting in one dashboard.",
+    description: "Pet shop management interface prototype covering inventory, purchases and sales. Built with React, TypeScript and local demo data.",
     stack: ["React", "TypeScript", "Vite", "Tailwind"],
-    url: "https://dahdiha-petshop-erp.vercel.app",
+    url: "https://dahdiha-petshop-erp.netlify.app",
     image: "/work/petshop.webp",
     imageSmall: "/work/petshop-sm.webp",
     width: 1000,
@@ -148,11 +150,11 @@ export const moreWork: { group: string; items: MoreItem[] }[] = [
       { title: "Medtour ERP", fact: "Full ERP and admin dashboard for Medtour.", link: null },
       { title: "Medtour DAM", fact: "Digital asset management platform for Medtour.", link: null },
       { title: "Medtour Unified Inbox", fact: "One inbox for Medtour's customer conversations.", link: { label: "GitHub", href: "https://github.com/AdemChammakhi/Unified-Inbox" }, with: [ADEM] },
-      { title: "THEA", fact: "Financial platform, 11 microservices, AI OCR, RAG chatbot.", link: { label: "GitHub", href: "https://github.com/FediMechergui/THEA" } },
+      { title: "THEA", fact: "Financial backend with service modules, invoice OCR and a RAG assistant.", link: { label: "GitHub", href: "https://github.com/FediMechergui/THEA" } },
       { title: "Medianet Opportunities", fact: "Opportunities platform with Excel export.", link: null },
-      { title: "SkillVault", fact: "Skills assessment platform, Angular 17, 5 services.", link: { label: "GitHub", href: "https://github.com/FediMechergui/SkillVault" } },
-      { title: "Fondation Bien-etre", fact: "Wellness centre website with a contact form.", link: { label: "Live", href: "https://fondation-bien-etre-theta.vercel.app" } },
-      { title: "Hotel contract workflow", fact: "16-step hotel contract form for a travel agency.", link: { label: "Live", href: "https://hoteldemo-five.vercel.app" } },
+      { title: "SkillVault", fact: "Skills assessment platform with Angular, Spring Boot and FastAPI services.", link: { label: "GitHub", href: "https://github.com/FediMechergui/SkillVault" } },
+      { title: "Fondation Bien-etre", fact: "Wellness centre website with a contact form.", link: { label: "Live", href: "https://fondation-bien-etre.netlify.app" } },
+      { title: "Hotel contract workflow", fact: "16-step hotel contract form for a travel agency.", link: { label: "Live", href: "https://hoteldemo-fm.netlify.app" } },
     ],
   },
   {
@@ -167,4 +169,4 @@ export const moreWork: { group: string; items: MoreItem[] }[] = [
   },
 ];
 
-export const PUBLIC_REPOS = 37;
+export const PUBLIC_REPOS = publicProjects.length;

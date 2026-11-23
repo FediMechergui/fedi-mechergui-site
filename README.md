@@ -28,15 +28,9 @@ npm run preview
 
 ## Deploy
 
-The site is static. On Vercel, import the repository and keep the defaults (framework: Vite, output: `dist`).
+The site is static. On Netlify, import the repository with build command `npm run build` and publish directory `dist`. The current site is https://workwebsite-fm.netlify.app.
 
-Before the first deploy, set the production URL in `.env`:
-
-```
-VITE_SITE_URL=https://your-domain.tld
-```
-
-It feeds the canonical link, the Open Graph tags and the JSON-LD in `index.html`.
+The canonical URL, Open Graph tags and JSON-LD in `index.html` point to `https://workwebsite-fm.netlify.app`. Update those public URLs if the production domain changes.
 
 ## Contact form (EmailJS)
 
@@ -47,7 +41,7 @@ Setup, once:
 1. Sign in at https://dashboard.emailjs.com and connect your Gmail under Email Services. Copy the Service ID.
 2. Under Email Templates, create a template. Paste the contents of `docs/emailjs-template.html` into the HTML editor (Design > code view). Set Subject to `New {{need}} request from {{from_name}}`, To Email to your address, and Reply To to `{{reply_to}}`. Copy the Template ID.
 3. Under Account > General, copy the Public Key.
-4. Put the three values in `.env` (and in Vercel > Settings > Environment Variables for production):
+4. Put the three values in `.env` (and in the hosting provider's environment variables for production):
 
 ```
 VITE_EMAILJS_PUBLIC_KEY=
@@ -63,6 +57,8 @@ Template variables the form sends: `need`, `from_name`, `reply_to`, `phone`, `de
 |---|---|
 | Copy: hero, process, about, tutoring, contact, footer | `src/data/facts.ts` |
 | Featured projects and the "More work" lists | `src/data/projects.ts` |
+| New projects with verified scope and stack | `src/data/recentProjects.ts` |
+| Complete public repository inventory and count | `src/data/publicProjects.ts` |
 | Services bento | `src/data/services.ts` |
 | Stack tabs and logos | `src/data/stack.ts` |
 | Colours, radius, fonts | `src/styles/tokens.css`, `src/styles/app.css` |
@@ -86,4 +82,4 @@ Append `?static` to the URL to render every animation in its final state, and `?
 - One accent colour (Sidi Bou Said blue), one shadow (the noon shadow plane, no blur), 6px radius on containers, pills on interactive elements.
 - No em-dashes or en-dashes anywhere in copy.
 - Only transform and opacity animate. Reduced motion collapses every animation to its final state.
-- Real numbers only: 37 public repositories, 28+ projects, 10+ interns mentored.
+- Public repository counts come from `src/data/publicProjects.ts`. The inventory is a dated snapshot; avoid hardcoded counts elsewhere.
